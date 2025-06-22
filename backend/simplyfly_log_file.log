@@ -1,0 +1,182 @@
+[INFO] : Starting SimplyFlyApplication using Java 21.0.6 with PID 15164 (C:\Users\RAVI\Desktop\new\target\classes started by RAVI in C:\Users\RAVI\Desktop\new)
+[INFO] : No active profile set, falling back to 1 default profile: "default"
+[INFO] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO] : Finished Spring Data repository scanning in 125 ms. Found 7 JPA repository interfaces.
+[INFO] : Tomcat initialized with port 8081 (http)
+[INFO] : Starting service [Tomcat]
+[INFO] : Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO] : Initializing Spring embedded WebApplicationContext
+[INFO] : Root WebApplicationContext: initialization completed in 3175 ms
+[INFO] : HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO] : HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO] : HHH000026: Second-level cache disabled
+[INFO] : No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO] : HikariPool-1 - Starting...
+[INFO] : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@54687fd0
+[INFO] : HikariPool-1 - Start completed.
+[WARN] : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO] : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : Hibernate is in classpath; If applicable, HQL parser will be used.
+[INFO] : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+[WARN] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO] : Tomcat started on port 8081 (http) with context path '/'
+[INFO] : Started SimplyFlyApplication in 10.091 seconds (process running for 14.0)
+[INFO] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO] : Initializing Servlet 'dispatcherServlet'
+[INFO] : Completed initialization in 1 ms
+[INFO] : Fetching all Flights
+[INFO] : Total Flights fetched: 8
+[INFO] : Creating booking with data: BookingDTO [bookingId=null, bookedAt=2025-06-20T00:30:32.489, status=CONFIRMED, baseFare=3000.0, totalFare=6000.0, username=Vikash, origin=Delhi, destination=Chennai, seat=2, bookDate=2025-06-28, flightCode=AI123, flightName=Air India Express, arrivalTime=06:05, departureTime=07:05, checkInBaggageLimit=25, cabinBaggageLimit=7]
+[INFO] : Booking created with ID: 13
+[INFO] : Creating booking with data: BookingDTO [bookingId=null, bookedAt=2025-06-20T00:30:50.492, status=CONFIRMED, baseFare=3000.0, totalFare=3000.0, username=Vikash, origin=Delhi, destination=Chennai, seat=1, bookDate=2025-06-26, flightCode=AI123, flightName=Air India Express, arrivalTime=06:05, departureTime=07:05, checkInBaggageLimit=25, cabinBaggageLimit=7]
+[INFO] : Booking created with ID: 14
+[WARN] : Deleting booking with ID: 14
+[INFO] : Booking deleted with ID: 14
+[INFO] : Fetching all bookings
+[INFO] : Total bookings fetched: 9
+[INFO] : Updating booking with ID: 13
+[INFO] : Booking updated: Booking [bookingId=13, bookedAt=2025-06-20T00:30:32.489, bookDate=2025-06-28, username=Vikash, seat=2, origin=Delhi, destination=Chennai, flightName=Air India Express, flightCode=AI123, arrivalTime=06:05, departureTime=07:05, checkInBaggageLimit=25, cabinBaggageLimit=7, status=CANCELLED, baseFare=3000.0, totalFare=6000.0, flight=Flight [flightId=1, name=Air India Express, flightCode=AI123, totalSeats=150, cabinBaggageLimit=7, checkInBaggageLimit=25], user=null, route=null]
+[INFO] : Fetching all bookings
+[INFO] : Total bookings fetched: 9
+[INFO] : Application shutdown requested.
+[INFO] : Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : HikariPool-1 - Shutdown initiated...
+[INFO] : HikariPool-1 - Shutdown completed.
+[INFO] : Starting SimplyFlyApplication using Java 21.0.6 with PID 20120 (C:\Users\RAVI\Desktop\new\target\classes started by RAVI in C:\Users\RAVI\Desktop\new)
+[INFO] : No active profile set, falling back to 1 default profile: "default"
+[INFO] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO] : Finished Spring Data repository scanning in 107 ms. Found 7 JPA repository interfaces.
+[INFO] : Tomcat initialized with port 8081 (http)
+[INFO] : Starting service [Tomcat]
+[INFO] : Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO] : Initializing Spring embedded WebApplicationContext
+[INFO] : Root WebApplicationContext: initialization completed in 2122 ms
+[INFO] : HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO] : HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO] : HHH000026: Second-level cache disabled
+[INFO] : No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO] : HikariPool-1 - Starting...
+[INFO] : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7bbd76b8
+[INFO] : HikariPool-1 - Start completed.
+[WARN] : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO] : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : Hibernate is in classpath; If applicable, HQL parser will be used.
+[INFO] : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+[WARN] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO] : Tomcat started on port 8081 (http) with context path '/'
+[INFO] : Started SimplyFlyApplication in 8.875 seconds (process running for 10.102)
+[INFO] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO] : Initializing Servlet 'dispatcherServlet'
+[INFO] : Completed initialization in 8 ms
+[INFO] : Fetching all Flights
+[INFO] : Total Flights fetched: 8
+[INFO] : Creating booking with data: BookingDTO [bookingId=null, bookedAt=2025-06-20T00:36:39.093, status=APPLIED, baseFare=2500.0, totalFare=2500.0, username=Vikash, origin=Madurai, destination=Coimbatore, seat=1, bookDate=2025-06-28, flightCode=IND101, flightName=Indigo, arrivalTime=10:10, departureTime=11:05, checkInBaggageLimit=15, cabinBaggageLimit=7]
+[WARN] : SQL Error: 1265, SQLState: 01000
+[ERROR] : Data truncated for column 'status' at row 1
+[INFO] : Application shutdown requested.
+[INFO] : Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : HikariPool-1 - Shutdown initiated...
+[INFO] : HikariPool-1 - Shutdown completed.
+[INFO] : Starting SimplyFlyApplication using Java 21.0.6 with PID 4504 (C:\Users\RAVI\Desktop\new\target\classes started by RAVI in C:\Users\RAVI\Desktop\new)
+[INFO] : No active profile set, falling back to 1 default profile: "default"
+[INFO] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO] : Finished Spring Data repository scanning in 68 ms. Found 7 JPA repository interfaces.
+[INFO] : Tomcat initialized with port 8081 (http)
+[INFO] : Starting service [Tomcat]
+[INFO] : Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO] : Initializing Spring embedded WebApplicationContext
+[INFO] : Root WebApplicationContext: initialization completed in 2335 ms
+[INFO] : HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO] : HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO] : HHH000026: Second-level cache disabled
+[INFO] : No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO] : HikariPool-1 - Starting...
+[INFO] : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ae6d078
+[INFO] : HikariPool-1 - Start completed.
+[WARN] : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO] : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : Hibernate is in classpath; If applicable, HQL parser will be used.
+[INFO] : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+[WARN] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO] : Tomcat started on port 8081 (http) with context path '/'
+[INFO] : Started SimplyFlyApplication in 7.136 seconds (process running for 17.766)
+[INFO] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO] : Initializing Servlet 'dispatcherServlet'
+[INFO] : Completed initialization in 2 ms
+[INFO] : Creating booking with data: BookingDTO [bookingId=null, bookedAt=2025-06-20T00:40:30.752, status=APPLIED, baseFare=2500.0, totalFare=2500.0, username=Vikash, origin=Madurai, destination=Coimbatore, seat=1, bookDate=2025-06-28, flightCode=IND101, flightName=Indigo, arrivalTime=10:10, departureTime=11:05, checkInBaggageLimit=15, cabinBaggageLimit=7]
+[INFO] : Booking created with ID: 15
+[INFO] : Fetching all Flights
+[INFO] : Total Flights fetched: 8
+[INFO] : Fetching all bookings
+[INFO] : Total bookings fetched: 10
+[INFO] : Updating booking with ID: 15
+[INFO] : Booking updated: Booking [bookingId=15, bookedAt=2025-06-20T00:40:30.752, bookDate=2025-06-28, username=Vikash, seat=1, origin=Madurai, destination=Coimbatore, flightName=Indigo, flightCode=IND101, arrivalTime=10:10, departureTime=11:05, checkInBaggageLimit=15, cabinBaggageLimit=7, status=CONFIRMED, baseFare=2500.0, totalFare=2500.0, flight=Flight [flightId=2, name=Indigo, flightCode=IND101, totalSeats=180, cabinBaggageLimit=7, checkInBaggageLimit=15], user=null, route=null]
+[INFO] : Fetching all bookings
+[INFO] : Total bookings fetched: 10
+[INFO] : Fetching all bookings
+[INFO] : Total bookings fetched: 10
+[INFO] : Fetching all Flights
+[INFO] : Total Flights fetched: 8
+[INFO] : Creating booking with data: BookingDTO [bookingId=null, bookedAt=2025-06-20T00:42:30.980, status=APPLIED, baseFare=2500.0, totalFare=2500.0, username=Vikash, origin=Mumbai, destination=Chennai, seat=1, bookDate=2025-06-30, flightCode=AI123, flightName=Air India Express, arrivalTime=08:10, departureTime=09:05, checkInBaggageLimit=25, cabinBaggageLimit=7]
+[INFO] : Booking created with ID: 16
+[INFO] : Fetching all Flights
+[INFO] : Total Flights fetched: 8
+[INFO] : Fetching all bookings
+[INFO] : Total bookings fetched: 11
+[INFO] : Fetching all Flights
+[INFO] : Total Flights fetched: 8
+[INFO] : Application shutdown requested.
+[INFO] : Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : HikariPool-1 - Shutdown initiated...
+[INFO] : HikariPool-1 - Shutdown completed.
+[INFO] : Starting SimplyFlyApplication using Java 21.0.6 with PID 18184 (C:\Users\RAVI\Desktop\new\target\classes started by RAVI in C:\Users\RAVI\Desktop\new)
+[INFO] : No active profile set, falling back to 1 default profile: "default"
+[INFO] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO] : Finished Spring Data repository scanning in 71 ms. Found 7 JPA repository interfaces.
+[INFO] : Tomcat initialized with port 8081 (http)
+[INFO] : Starting service [Tomcat]
+[INFO] : Starting Servlet engine: [Apache Tomcat/10.1.40]
+[INFO] : Initializing Spring embedded WebApplicationContext
+[INFO] : Root WebApplicationContext: initialization completed in 2012 ms
+[INFO] : HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO] : HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO] : HHH000026: Second-level cache disabled
+[INFO] : No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO] : HikariPool-1 - Starting...
+[INFO] : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4e52d2f2
+[INFO] : HikariPool-1 - Start completed.
+[WARN] : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[INFO] : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : Hibernate is in classpath; If applicable, HQL parser will be used.
+[INFO] : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+[WARN] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO] : Tomcat started on port 8081 (http) with context path '/'
+[INFO] : Started SimplyFlyApplication in 7.75 seconds (process running for 8.576)
+[INFO] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO] : Initializing Servlet 'dispatcherServlet'
+[INFO] : Completed initialization in 5 ms
+[INFO] : Fetching all users
+[INFO] : Total users fetched: 6
+[INFO] : Fetching all bookings
+[INFO] : Total bookings fetched: 11
+[INFO] : Fetching bookings with status: CONFIRMED
+[INFO] : Fetching all Flights
+[INFO] : Total Flights fetched: 8
+[INFO] : Creating Flight with data: FlightDTO [flightId=0, name=Indigo, flightCode=IND102, totalSeats=150, cabinBaggageLimit=9, checkInBaggageLimit=17, routes=null]
+[INFO] : Fetching all Flights
+[INFO] : Total Flights fetched: 9
+[INFO] : Fetching all Flights
+[INFO] : Total Flights fetched: 9
+[INFO] : Creating booking with data: BookingDTO [bookingId=null, bookedAt=2025-06-20T11:12:32.343, status=APPLIED, baseFare=2500.0, totalFare=2500.0, username=Vikash, origin=Madurai, destination=Coimbatore, seat=1, bookDate=2025-06-26, flightCode=IND101, flightName=Indigo, arrivalTime=10:10, departureTime=11:05, checkInBaggageLimit=15, cabinBaggageLimit=7]
+[INFO] : Booking created with ID: 17
+[INFO] : Fetching all Flights
+[INFO] : Total Flights fetched: 9
+[INFO] : Fetching all Routes
+[INFO] : Application shutdown requested.
+[INFO] : Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO] : HikariPool-1 - Shutdown initiated...
+[INFO] : HikariPool-1 - Shutdown completed.

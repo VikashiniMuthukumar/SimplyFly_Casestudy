@@ -1,0 +1,72 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Available Flights</h2>
+
+  <div *ngIf="errorMessage" class="alert alert-danger text-center">{{ errorMessage }}</div>
+
+  <div class="row" *ngIf="flights.length > 0">
+    <div class="col-md-6 col-lg-4 mb-4" *ngFor="let flight of flights">
+      <div class="card shadow-sm border rounded h-100">
+        <div class="card-body">
+          <h5 class="card-title text-info fw-bold">{{ flight.name }}</h5>
+          <p class="mb-1"><strong>Flight Code:</strong> {{ flight.flightCode }}</p>
+          <p class="mb-1"><strong>Total Seats:</strong> {{ flight.totalSeats }}</p>
+          <p class="mb-1"><strong>Cabin Baggage:</strong> {{ flight.cabinBaggageLimit }} kg</p>
+          <p class="mb-1"><strong>Check-in Baggage:</strong> {{ flight.checkInBaggageLimit }} kg</p>
+
+          <div class="mt-3 d-flex justify-content-between">
+            <button class="btn btn-sm btn-outline-secondary" (click)="openEditModal(flight)">Edit</button>
+            <button class="btn btn-sm btn-outline-danger" (click)="deleteFlight(flight.flightId)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="flights.length === 0" class="alert alert-info text-center">
+    No flights available.
+  </div>
+</div>
+
+<!--  Edit Modal -->
+<div class="modal" tabindex="-1" style="display: block;" *ngIf="showEditModal">
+  <div class="modal-dialog">
+    <div class="modal-content rounded-3 shadow-sm">
+      <form (ngSubmit)="updateFlight()" #editForm="ngForm">
+        <div class="modal-header bg-light">
+          <h5 class="modal-title text-dark"> Edit Flight</h5>
+          <button type="button" class="btn-close" (click)="closeModal()"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group mb-2">
+            <label>Flight Name</label>
+            <input type="text" class="form-control" name="name" [(ngModel)]="selectedFlight.name" required />
+          </div>
+
+          <div class="form-group mb-2">
+            <label>Flight Code</label>
+            <input type="text" class="form-control" name="flightCode" [(ngModel)]="selectedFlight.flightCode" required />
+          </div>
+
+          <div class="form-group mb-2">
+            <label>Total Seats</label>
+            <input type="number" class="form-control" name="totalSeats" [(ngModel)]="selectedFlight.totalSeats" required min="1" />
+          </div>
+
+          <div class="form-group mb-2">
+            <label>Cabin Baggage Limit (kg)</label>
+            <input type="number" class="form-control" name="cabinBaggageLimit" [(ngModel)]="selectedFlight.cabinBaggageLimit" required min="1" />
+          </div>
+
+          <div class="form-group mb-2">
+            <label>Check-In Baggage Limit (kg)</label>
+            <input type="number" class="form-control" name="checkInBaggageLimit" [(ngModel)]="selectedFlight.checkInBaggageLimit" required min="1" />
+          </div>
+        </div>
+        <div class="modal-footer bg-light">
+          <button type="submit" class="btn btn-outline-success" [disabled]="editForm.invalid">Save</button>
+          <button type="button" class="btn btn-outline-secondary" (click)="closeModal()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

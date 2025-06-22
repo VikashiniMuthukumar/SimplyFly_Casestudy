@@ -1,0 +1,27 @@
+.custom-card {
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.custom-btn {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #6c757d; /* Neutral color */
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.custom-btn:hover {
+  background-color: #5a6268;
+  color: white;
+}

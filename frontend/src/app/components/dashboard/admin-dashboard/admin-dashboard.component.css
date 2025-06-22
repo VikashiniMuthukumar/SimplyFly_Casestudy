@@ -1,0 +1,17 @@
+.dashboard-btn {
+  background-color: rgba(4, 228, 216, 0.4);
+  border: none;
+  color: #000;
+  padding: 12px 20px;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-btn:hover {
+  background-color: rgba(4, 228, 216, 0.6);
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}

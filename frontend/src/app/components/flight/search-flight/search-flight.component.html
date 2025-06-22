@@ -1,0 +1,23 @@
+
+<div class="container mt-4">
+  <h4>Search Flight by Flight Code</h4>
+
+  <form (ngSubmit)="searchFlight()" #searchForm="ngForm" class="mb-3 d-flex gap-2">
+    <input type="text" class="form-control w-auto" style="margin-right: 10px;" required [(ngModel)]="flightCode" name="flightCode" placeholder="Enter flight code">
+    <button class="btn btn-primary" [disabled]="searchForm.invalid">Search</button>
+  </form>
+
+  <div *ngIf="flight">
+    <h5>Flight Details</h5>
+    <ul class="list-group">
+      <li class="list-group-item"><strong>ID:</strong> {{ flight.flightId }}</li>
+      <li class="list-group-item"><strong>Name:</strong> {{ flight.name }}</li>
+      <li class="list-group-item"><strong>Flight Code:</strong> {{ flight.flightCode }}</li>
+      <li class="list-group-item"><strong>Total Seats:</strong> {{ flight.totalSeats }}</li>
+      <li class="list-group-item"><strong>Cabin Baggage:</strong> {{ flight.cabinBaggageLimit }}</li>
+      <li class="list-group-item"><strong>Check-In Baggage:</strong> {{ flight.checkInBaggageLimit }}</li>
+    </ul>
+  </div>
+
+  <div *ngIf="errorMsg" class="alert alert-danger mt-2">{{ errorMsg }}</div>
+</div>

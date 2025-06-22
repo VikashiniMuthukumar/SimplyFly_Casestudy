@@ -1,0 +1,110 @@
+<form #bookingForm="ngForm" (ngSubmit)="submitBooking()" class="container col-md-6 mt-4">
+  <h3 class="text-center mb-4">Book a Flight</h3>
+
+  <!-- Flight Code -->
+  <div class="form-group mt-2">
+    <label>Flight</label>
+    <select class="form-control" name="flightCode" [(ngModel)]="booking.flightCode" (change)="onFlightCodeSelect()"
+            required #flightCode="ngModel">
+      <option value="" disabled selected>-- Select Flight --</option>
+      <option *ngFor="let flight of flights" [value]="flight.flightCode">
+        {{ flight.name }} ({{ flight.flightCode }})
+      </option>
+    </select>
+    <small class="text-danger" *ngIf="flightCode.invalid && flightCode.touched">Flight is required.</small>
+  </div>
+
+  <!-- Flight Name -->
+  <div class="form-group mt-2">
+    <label>Flight Name</label>
+    <input type="text" class="form-control" name="flightName" [(ngModel)]="booking.flightName" readonly>
+  </div>
+
+  <!-- Origin -->
+  <div class="form-group mt-2">
+    <label>Origin</label>
+    <select class="form-control" name="origin" [(ngModel)]="booking.origin" (change)="onRouteSelect()" required #origin="ngModel">
+      <option value="" disabled selected>-- Select Origin --</option>
+      <option *ngFor="let origin of origins" [value]="origin">{{ origin }}</option>
+    </select>
+    <small class="text-danger" *ngIf="origin.invalid && origin.touched">Origin is required.</small>
+  </div>
+
+  <!-- Destination -->
+  <div class="form-group mt-2">
+    <label>Destination</label>
+    <select class="form-control" name="destination" [(ngModel)]="booking.destination" (change)="onRouteSelect()" required #destination="ngModel">
+      <option value="" disabled selected>-- Select Destination --</option>
+      <option *ngFor="let dest of destinations" [value]="dest">{{ dest }}</option>
+    </select>
+    <small class="text-danger" *ngIf="destination.invalid && destination.touched">Destination is required.</small>
+  </div>
+
+  <!-- Arrival Time -->
+  <div class="form-group mt-2">
+    <label>Arrival Time</label>
+    <input type="text" class="form-control" name="arrivalTime" [(ngModel)]="booking.arrivalTime" readonly>
+  </div>
+
+  <!-- Departure Time -->
+  <div class="form-group mt-2">
+    <label>Departure Time</label>
+    <input type="text" class="form-control" name="departureTime" [(ngModel)]="booking.departureTime" readonly>
+  </div>
+
+  <!-- Base Fare -->
+  <div class="form-group mt-2">
+    <label>Base Fare (₹)</label>
+    <input type="number" class="form-control" name="baseFare" [(ngModel)]="booking.baseFare" readonly>
+  </div>
+
+  <!-- Number of Seats -->
+  <div class="form-group mt-2">
+    <label>Number of Seats</label>
+    <input type="number" class="form-control" name="seat" [(ngModel)]="booking.seat"
+           (ngModelChange)="calculateTotalFare()" min="1" required #seat="ngModel">
+    <small class="text-danger" *ngIf="seat.invalid && seat.touched">
+      Seat number is required and must be at least 1.
+    </small>
+  </div>
+
+  <!-- Total Fare -->
+  <div class="form-group mt-2">
+    <label>Total Fare (₹)</label>
+    <input type="number" class="form-control" name="totalFare" [(ngModel)]="booking.totalFare" readonly>
+  </div>
+
+  <!-- Check-In Baggage Limit -->
+  <div class="form-group mt-2">
+    <label>Check-In Baggage Limit (kg)</label>
+    <input type="number" class="form-control" name="checkInBaggageLimit" [(ngModel)]="booking.checkInBaggageLimit" readonly>
+  </div>
+
+  <!-- Cabin Baggage Limit -->
+  <div class="form-group mt-2">
+    <label>Cabin Baggage Limit (kg)</label>
+    <input type="number" class="form-control" name="cabinBaggageLimit" [(ngModel)]="booking.cabinBaggageLimit" readonly>
+  </div>
+
+ 
+  <div class="form-group mt-2">
+    <label>Book Date</label>
+    <input type="date"
+           class="form-control"
+           name="bookDate"
+           [(ngModel)]="booking.bookDate"
+           [min]="minDate"
+           required #bookDate="ngModel">
+    <small class="text-danger" *ngIf="bookDate.invalid && bookDate.touched">Booking date is required.</small>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="text-center mt-4">
+    <button type="submit" class="btn btn-success" [disabled]="bookingForm.invalid">
+      Submit Booking
+    </button>
+  </div>
+
+  <!-- Message -->
+  <div class="alert alert-info mt-3 text-center" *ngIf="message">{{ message }}</div>
+</form>

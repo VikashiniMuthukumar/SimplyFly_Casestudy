@@ -1,0 +1,95 @@
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+  <div class="card p-4 shadow-sm border-0" style="width: 100%; max-width: 450px;">
+    <div class="text-center mb-4">
+      <h3 class="fw-bold">Create Account</h3>
+      <p class="text-muted">Register to use SimplyFly</p>
+    </div>
+
+    <form (ngSubmit)="register()" #registerForm="ngForm">
+      <!-- Username -->
+      <div class="form-group mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text"
+               [(ngModel)]="username"
+               name="username"
+               id="username"
+               class="form-control"
+               required
+               #usernameModel="ngModel"
+               placeholder="Enter username" />
+        <div class="text-danger mt-1" *ngIf="(usernameModel.touched || registerForm.submitted) && usernameModel.invalid">
+          Username is required.
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password"
+               [(ngModel)]="password"
+               name="password"
+               id="password"
+               class="form-control"
+               required
+               pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
+               #passwordModel="ngModel"
+               placeholder="Enter password" />
+        <div class="text-danger mt-1" *ngIf="(passwordModel.touched || registerForm.submitted) && passwordModel.invalid">
+          Password must be at least 6 characters and contain both letters and numbers.
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email"
+               [(ngModel)]="email"
+               name="email"
+               id="email"
+               class="form-control"
+               required
+               email
+               #emailModel="ngModel"
+               placeholder="Enter email" />
+        <div class="text-danger mt-1" *ngIf="(emailModel.touched || registerForm.submitted) && emailModel.invalid">
+          Please enter a valid email.
+        </div>
+      </div>
+
+      <!-- Role -->
+      <div class="form-group mb-3">
+        <label for="role" class="form-label mb-1">Select Role</label>
+        <select class="form-control mt-2"
+                [(ngModel)]="role"
+                name="role"
+                id="role"
+                required
+                #roleModel="ngModel">
+          <option value="" disabled selected>Select your role</option>
+          <option value="ROLE_USER">User</option>
+          <option value="ROLE_ADMIN">Admin</option>
+          <option value="ROLE_FLIGHT_OWNER">Flight Owner</option>
+        </select>
+        <div class="text-danger mt-1" *ngIf="(roleModel.touched || registerForm.submitted) && roleModel.invalid">
+          Please select a role.
+        </div>
+      </div>
+
+      <!-- Error Message -->
+      <div *ngIf="message" class="alert alert-danger py-2 text-center">{{ message }}</div>
+
+      <!-- Submit -->
+      <button type="submit" class="btn btn-success btn-lg w-100 mt-2" [disabled]="registerForm.invalid">
+        Register
+      </button>
+    </form>
+
+    <!-- Login Link -->
+    <div class="text-center mt-3">
+      <small>
+        Already have an account?
+        <a routerLink="/login" class="text-decoration-none text-primary fw-semibold">Login here</a>
+      </small>
+    </div>
+  </div>
+</div>

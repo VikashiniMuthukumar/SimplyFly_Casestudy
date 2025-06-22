@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+  <div class="card p-4 shadow-sm border-0" style="width: 100%; max-width: 400px;">
+    <div class="text-center mb-4">
+      <h3 class="fw-bold">Welcome Back</h3>
+      <p class="text-muted">Login to your SimplyFly account</p>
+    </div>
+
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+      <!-- Username -->
+      <div class="form-group mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text"
+               class="form-control"
+               id="username"
+               name="username"
+               required
+               [(ngModel)]="username"
+               #usernameModel="ngModel"
+               placeholder="Enter your username" />
+        <div class="text-danger mt-1" *ngIf="(usernameModel.touched || loginForm.submitted) && usernameModel.invalid">
+          Username is required.
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password"
+               class="form-control"
+               id="password"
+               name="password"
+               required
+               [(ngModel)]="password"
+               #passwordModel="ngModel"
+               placeholder="Enter your password" />
+        <div class="text-danger mt-1" *ngIf="(passwordModel.touched || loginForm.submitted) && passwordModel.invalid">
+          Password is required.
+        </div>
+      </div>
+
+      <!-- Error Message -->
+      <div *ngIf="message" class="alert alert-danger py-2 text-center">{{ message }}</div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary btn-lg w-100 mt-2" [disabled]="loginForm.invalid">
+        Login
+      </button>
+    </form>
+
+    <!-- Register link -->
+    <div class="text-center mt-3">
+      <small>
+        Don't have an account?
+        <a routerLink="/register" class="text-decoration-none text-primary fw-semibold">Register here</a>
+      </small>
+    </div>
+  </div>
+</div>

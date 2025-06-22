@@ -1,0 +1,7 @@
+/* Add this to styles.css or component CSS */
+.navbar .d-flex {
+  margin-left: auto; /* force to right */
+}
+.nav-buttons a {
+  margin-left: 12px;
+}

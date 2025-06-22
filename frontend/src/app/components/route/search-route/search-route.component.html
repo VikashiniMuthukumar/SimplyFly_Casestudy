@@ -1,0 +1,44 @@
+
+<div class="container mt-4">
+  <h4 class="mb-3">Search Route by Flight Code</h4>
+
+
+  <form (ngSubmit)="searchRoutes()" #routeSearchForm="ngForm" class="mb-3 d-flex gap-2 align-items-center">
+    <select class="form-select w-auto" style="margin-right: 10px;"  required [(ngModel)]="searchFlightCode" name="searchFlightCode">
+        <option value="" disabled selected>Select flight code</option>
+        <option *ngFor="let code of flightCodes" [value]="code">{{ code }}</option>
+    </select>
+
+    <button class="btn btn-primary" [disabled]="routeSearchForm.invalid">Search</button>
+  </form>
+
+  <div *ngIf="routes.length > 0">
+    <h5>Route Details</h5>
+    <table class="table table-bordered table-striped text-center">
+      <thead class="table-info">
+        <tr>
+          <th>ID</th>
+          <th>Origin</th>
+          <th>Destination</th>
+          <th>Departure</th>
+          <th>Arrival</th>
+          <th>Base Fare</th>
+          <th>Flight Code</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let route of routes">
+          <td>{{ route.route_id }}</td>
+          <td>{{ route.origin }}</td>
+          <td>{{ route.destination }}</td>
+          <td>{{ route.departureTime }}</td>
+          <td>{{ route.arrivalTime }}</td>
+          <td>₹{{ route.baseFare }}</td>
+          <td>{{ route.flightCode }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="errorMsg" class="alert alert-danger mt-2">{{ errorMsg }}</div>
+</div>

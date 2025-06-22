@@ -1,0 +1,78 @@
+<form #routeForm="ngForm" (ngSubmit)="insertRoute()" class="container col-md-6 mt-4">
+  <h3 class="text-center mb-4">Add Route</h3>
+
+  <!-- Origin -->
+  <div class="form-group mb-3">
+    <label for="origin">Origin</label>
+    <input type="text" id="origin" class="form-control" name="origin"
+           [(ngModel)]="route.origin" required pattern="[A-Z][a-zA-Z ]{2,20}" #origin="ngModel">
+    <div class="text-danger" *ngIf="(origin.touched || routeForm.submitted) && origin.invalid">
+      <small *ngIf="origin.errors?.['required']">Origin is required.</small>
+      <small *ngIf="origin.errors?.['pattern']">Must start with uppercase and be 3–20 characters.</small>
+    </div>
+  </div>
+
+  <!-- Destination -->
+  <div class="form-group mb-3">
+    <label for="destination">Destination</label>
+    <input type="text" id="destination" class="form-control" name="destination"
+           [(ngModel)]="route.destination" required pattern="[A-Z][a-zA-Z ]{2,20}" #destination="ngModel">
+    <div class="text-danger" *ngIf="(destination.touched || routeForm.submitted) && destination.invalid">
+      <small *ngIf="destination.errors?.['required']">Destination is required.</small>
+      <small *ngIf="destination.errors?.['pattern']">Must start with uppercase and be 3–20 characters.</small>
+    </div>
+  </div>
+
+  <!-- Departure Time -->
+  <div class="form-group mb-3">
+    <label for="departureTime">Departure Time</label>
+    <input type="time" id="departureTime" class="form-control" name="departureTime"
+           [(ngModel)]="route.departureTime" required #departureTime="ngModel">
+    <div class="text-danger" *ngIf="(departureTime.touched || routeForm.submitted) && departureTime.invalid">
+      <small>Departure time is required.</small>
+    </div>
+  </div>
+
+  <!-- Arrival Time -->
+  <div class="form-group mb-3">
+    <label for="arrivalTime">Arrival Time</label>
+    <input type="time" id="arrivalTime" class="form-control" name="arrivalTime"
+           [(ngModel)]="route.arrivalTime" required #arrivalTime="ngModel">
+    <div class="text-danger" *ngIf="(arrivalTime.touched || routeForm.submitted) && arrivalTime.invalid">
+      <small>Arrival time is required.</small>
+    </div>
+  </div>
+
+  <!-- Base Fare -->
+  <div class="form-group mb-3">
+    <label for="baseFare">Base Fare</label>
+    <input type="number" id="baseFare" class="form-control" name="baseFare"
+           [(ngModel)]="route.baseFare" min="1" required #baseFare="ngModel">
+    <div class="text-danger" *ngIf="(baseFare.touched || routeForm.submitted) && baseFare.invalid">
+      <small *ngIf="baseFare.errors?.['required']">Base fare is required.</small>
+      <small *ngIf="baseFare.errors?.['min']">Fare must be at least ₹1.</small>
+    </div>
+  </div>
+
+  <!-- Flight Code -->
+  <div class="form-group mb-4">
+    <label for="flightCode">Flight</label>
+    <select id="flightCode" class="form-control" name="flightCode"
+            [(ngModel)]="route.flightCode" required #flightCode="ngModel">
+      <option value="" disabled selected>-- Select Flight --</option>
+      <option *ngFor="let flight of flights" [value]="flight.flightCode">
+        {{ flight.flightCode }} - {{ flight.name }}
+      </option>
+    </select>
+    <div class="text-danger" *ngIf="(flightCode.touched || routeForm.submitted) && flightCode.invalid">
+      <small>Flight selection is required.</small>
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="text-center">
+    <button type="submit" class="btn btn-success px-4" [disabled]="routeForm.invalid">
+      Add Route
+    </button>
+  </div>
+</form>

@@ -1,0 +1,105 @@
+
+
+<form #flightForm="ngForm" (ngSubmit)="addFlight(flightForm)" class="container col-md-6 mt-4">
+  <h3 class="text-center mb-4">Add Flight</h3>
+
+  <!-- Flight Name -->
+  <div class="form-group mb-3">
+    <label for="name">Flight Name</label>
+    <input
+      type="text"
+      id="name"
+      class="form-control"
+      name="name"
+      [(ngModel)]="flight.name"
+      required
+      pattern="[A-Z][a-zA-Z ]+"
+      #name="ngModel"
+    />
+    <div class="text-danger" *ngIf="(name.touched || flightForm.submitted) && name.invalid">
+      <small *ngIf="name.errors?.['required']">Flight name is required.</small>
+      <small *ngIf="name.errors?.['pattern']">Must start with a capital letter and contain only letters/spaces.</small>
+    </div>
+  </div>
+
+  <!-- Flight Code -->
+  <div class="form-group mb-3">
+    <label for="flightCode">Flight Code</label>
+    <input
+      type="text"
+      id="flightCode"
+      class="form-control"
+      name="flightCode"
+      [(ngModel)]="flight.flightCode"
+      required
+      pattern="[A-Z0-9]{3,10}"
+      #flightCode="ngModel"
+    />
+    <div class="text-danger" *ngIf="(flightCode.touched || flightForm.submitted) && flightCode.invalid">
+      <small *ngIf="flightCode.errors?.['required']">Flight code is required.</small>
+      <small *ngIf="flightCode.errors?.['pattern']">Must be 3–10 uppercase letters/numbers (e.g., IND101).</small>
+    </div>
+  </div>
+
+  <!-- Total Seats -->
+  <div class="form-group mb-3">
+    <label for="totalSeats">Total Seats</label>
+    <input
+      type="number"
+      id="totalSeats"
+      class="form-control"
+      name="totalSeats"
+      [(ngModel)]="flight.totalSeats"
+      required
+      min="1"
+      #totalSeats="ngModel"
+    />
+    <div class="text-danger" *ngIf="(totalSeats.touched || flightForm.submitted) && totalSeats.invalid">
+      <small *ngIf="totalSeats.errors?.['required']">Total seats are required.</small>
+      <small *ngIf="totalSeats.errors?.['min']">Must be at least 1 seat.</small>
+    </div>
+  </div>
+
+  <!-- Cabin Baggage Limit -->
+  <div class="form-group mb-3">
+    <label for="cabinBaggageLimit">Cabin Baggage Limit (kg)</label>
+    <input
+      type="number"
+      id="cabinBaggageLimit"
+      class="form-control"
+      name="cabinBaggageLimit"
+      [(ngModel)]="flight.cabinBaggageLimit"
+      required
+      min="1"
+      #cabinBaggageLimit="ngModel"
+    />
+    <div class="text-danger" *ngIf="(cabinBaggageLimit.touched || flightForm.submitted) && cabinBaggageLimit.invalid">
+      <small *ngIf="cabinBaggageLimit.errors?.['required']">Cabin baggage limit is required.</small>
+      <small *ngIf="cabinBaggageLimit.errors?.['min']">Must be at least 1 kg.</small>
+    </div>
+  </div>
+
+  <!-- Check-In Baggage Limit -->
+  <div class="form-group mb-3">
+    <label for="checkInBaggageLimit">Check-In Baggage Limit (kg)</label>
+    <input
+      type="number"
+      id="checkInBaggageLimit"
+      class="form-control"
+      name="checkInBaggageLimit"
+      [(ngModel)]="flight.checkInBaggageLimit"
+      required
+      min="1"
+      #checkInBaggageLimit="ngModel"
+    />
+    <div class="text-danger" *ngIf="(checkInBaggageLimit.touched || flightForm.submitted) && checkInBaggageLimit.invalid">
+      <small *ngIf="checkInBaggageLimit.errors?.['required']">Check-in baggage limit is required.</small>
+      <small *ngIf="checkInBaggageLimit.errors?.['min']">Must be at least 1 kg.</small>
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="text-center mt-4">
+    <button type="submit" class="btn btn-success px-5" [disabled]="flightForm.invalid">Add Flight</button>
+  </div>
+</form>
